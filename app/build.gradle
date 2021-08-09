@@ -3,6 +3,10 @@ plugins {
     id 'kotlin-android'
 }
 
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
@@ -72,4 +76,16 @@ dependencies {
 
     // optional - Paging 3 Integration
     implementation "androidx.room:room-paging:2.4.0-alpha04"
+
+
+    implementation "androidx.datastore:datastore:1.0.0-rc02"
+    implementation "androidx.datastore:datastore-core:1.0.0-rc02"
+
+    // Room
+    implementation "androidx.room:room-runtime:2.2.6"
+    kapt "androidx.room:room-compiler:2.2.6"
+
+    // Hilt dependencies
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
 }
